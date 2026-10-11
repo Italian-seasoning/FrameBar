@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0615D21EE544304FD0A26F64 /* OverlayPlacementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F56D6394729771A0CFA94C /* OverlayPlacementTests.swift */; };
+		08CCC936D3F6B4C15C610530 /* PerformanceStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC669B9F8B2D1595C0C21C9 /* PerformanceStatsTests.swift */; };
+		0A486909C0687B77861A3D56 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764A47B25812BCB9C88BA5D /* Metrics.swift */; };
+		1731B386A0A3C8223FCEACBD /* FPSSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE6FA3F300ABAA719EDD91F /* FPSSetup.swift */; };
+		1CC3EB8A0E2684276E1414DA /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6856750C9CF9BADEBC505 /* ProfileTests.swift */; };
+		3102A7C98B2DEA93ED5FA4AA /* FrameBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4BB55AC059FA7532BA288F /* FrameBarTests.swift */; };
+		3D597DA82B79C0F3D7EFC251 /* ScreenUpdateSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF86B80E42A942A4F54C49B /* ScreenUpdateSampler.swift */; };
+		4708EA550CEF57CE2A8EC110 /* GameFPSReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCBA665F6B3EA3B1210A39E /* GameFPSReader.swift */; };
+		4A654C094ED70EC2C5AEA1FF /* OverlayShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95871F72AF357BBE228F80CB /* OverlayShortcut.swift */; };
+		4E3AFAC4F43C4244C7E82C07 /* MenuBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432EA2E1AA94C95718968AA5 /* MenuBarTests.swift */; };
+		4F617150A6283AC7920679A2 /* SystemSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5BDEF338D2AFED09456DE0 /* SystemSampler.swift */; };
+		5663E5ED1DCAF4FEB46ED0CB /* FPSSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3758F3721B2564DCCAA61ED /* FPSSetupTests.swift */; };
+		8D475D92B4340D7DF73A1570 /* CapturelyTelemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F04FCD187E7167CB10AE04 /* CapturelyTelemetry.swift */; };
+		8E8BE5B59613B8063C4C61A2 /* FrameBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7AD29169F88953197755E3 /* FrameBarApp.swift */; };
+		901037EAFC260E51A7C3537A /* PerformanceStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECA66ED6426C682ED9D1316 /* PerformanceStats.swift */; };
+		9EBAB7ED2CE88D262CEC9067 /* DisplaySampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12CA4F5F68B7EE484C4F897 /* DisplaySampler.swift */; };
+		AF3530CD16E31AEEF043D091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81DBBF8DCF1D4A5CDA6D3F9A /* Assets.xcassets */; };
+		BD044ABEA13B2EA47B0B316B /* MonitorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B75F75A170C2637A621F9E /* MonitorStore.swift */; };
+		BD25E369760C3406A41806B4 /* StatsLifecycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A338E1FE62EB23F0F2B004E /* StatsLifecycleTests.swift */; };
+		C4DFEC3658D7E2EB5E0B84F1 /* MonitorViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA21C8C942C55ED07D8B6E /* MonitorViews.swift */; };
+		DAAB3348266C5D877970DE39 /* FPSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9011E82B118CE25220BBF8D /* FPSParser.swift */; };
+		DD57E1F3A5D097BC81063EC2 /* OverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFA32FCCEFBEE63BA0034C8 /* OverlayController.swift */; };
+		E3E6B1D1A3A3361B07AD0143 /* MenuBarReadoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63E68B2FED38B4884161E5D /* MenuBarReadoutView.swift */; };
+		F2EE41BBDC89C50F9C1DFEA0 /* PerformanceDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989080960D759B9E83607B7 /* PerformanceDetailsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F4093799B25D29F2509861A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D9385323FECAA33CFE9607 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AC4CC2FA01238885353C95B;
+			remoteInfo = FrameBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11C6856750C9CF9BADEBC505 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		2893B8E2D072A4360A332545 /* FrameBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrameBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		35B75F75A170C2637A621F9E /* MonitorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorStore.swift; sourceTree = "<group>"; };
+		3CCBA665F6B3EA3B1210A39E /* GameFPSReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFPSReader.swift; sourceTree = "<group>"; };
+		3ECA66ED6426C682ED9D1316 /* PerformanceStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceStats.swift; sourceTree = "<group>"; };
+		432EA2E1AA94C95718968AA5 /* MenuBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarTests.swift; sourceTree = "<group>"; };
+		44F04FCD187E7167CB10AE04 /* CapturelyTelemetry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturelyTelemetry.swift; sourceTree = "<group>"; };
+		47BA21C8C942C55ED07D8B6E /* MonitorViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorViews.swift; sourceTree = "<group>"; };
+		5764A47B25812BCB9C88BA5D /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		5BE6FA3F300ABAA719EDD91F /* FPSSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSSetup.swift; sourceTree = "<group>"; };
+		6BFA32FCCEFBEE63BA0034C8 /* OverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayController.swift; sourceTree = "<group>"; };
+		6D5BDEF338D2AFED09456DE0 /* SystemSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSampler.swift; sourceTree = "<group>"; };
+		81DBBF8DCF1D4A5CDA6D3F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A338E1FE62EB23F0F2B004E /* StatsLifecycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsLifecycleTests.swift; sourceTree = "<group>"; };
+		95871F72AF357BBE228F80CB /* OverlayShortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayShortcut.swift; sourceTree = "<group>"; };
+		9FC669B9F8B2D1595C0C21C9 /* PerformanceStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceStatsTests.swift; sourceTree = "<group>"; };
+		AF4BB55AC059FA7532BA288F /* FrameBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBarTests.swift; sourceTree = "<group>"; };
+		BD391AE6AA3C79B2370CC6FE /* FrameBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrameBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3758F3721B2564DCCAA61ED /* FPSSetupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSSetupTests.swift; sourceTree = "<group>"; };
+		C9011E82B118CE25220BBF8D /* FPSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPSParser.swift; sourceTree = "<group>"; };
+		C989080960D759B9E83607B7 /* PerformanceDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceDetailsView.swift; sourceTree = "<group>"; };
+		CC7AD29169F88953197755E3 /* FrameBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBarApp.swift; sourceTree = "<group>"; };
+		D2F56D6394729771A0CFA94C /* OverlayPlacementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayPlacementTests.swift; sourceTree = "<group>"; };
+		E12CA4F5F68B7EE484C4F897 /* DisplaySampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySampler.swift; sourceTree = "<group>"; };
+		F63E68B2FED38B4884161E5D /* MenuBarReadoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarReadoutView.swift; sourceTree = "<group>"; };
+		FCF86B80E42A942A4F54C49B /* ScreenUpdateSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUpdateSampler.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		7CEF4859C6A69CE43576647D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD391AE6AA3C79B2370CC6FE /* FrameBar.app */,
+				2893B8E2D072A4360A332545 /* FrameBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93AA4BDFFE2EB4A2D0FB9C96 = {
+			isa = PBXGroup;
+			children = (
+				FE360D118AEA2CD5508A5F50 /* FrameBar */,
+				D6AB288CA2B791A5414B2DC8 /* FrameBarTests */,
+				7CEF4859C6A69CE43576647D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D6AB288CA2B791A5414B2DC8 /* FrameBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3758F3721B2564DCCAA61ED /* FPSSetupTests.swift */,
+				AF4BB55AC059FA7532BA288F /* FrameBarTests.swift */,
+				432EA2E1AA94C95718968AA5 /* MenuBarTests.swift */,
+				D2F56D6394729771A0CFA94C /* OverlayPlacementTests.swift */,
+				9FC669B9F8B2D1595C0C21C9 /* PerformanceStatsTests.swift */,
+				11C6856750C9CF9BADEBC505 /* ProfileTests.swift */,
+				8A338E1FE62EB23F0F2B004E /* StatsLifecycleTests.swift */,
+			);
+			path = FrameBarTests;
+			sourceTree = "<group>";
+		};
+		FE360D118AEA2CD5508A5F50 /* FrameBar */ = {
+			isa = PBXGroup;
+			children = (
+				81DBBF8DCF1D4A5CDA6D3F9A /* Assets.xcassets */,
+				44F04FCD187E7167CB10AE04 /* CapturelyTelemetry.swift */,
+				E12CA4F5F68B7EE484C4F897 /* DisplaySampler.swift */,
+				C9011E82B118CE25220BBF8D /* FPSParser.swift */,
+				5BE6FA3F300ABAA719EDD91F /* FPSSetup.swift */,
+				CC7AD29169F88953197755E3 /* FrameBarApp.swift */,
+				3CCBA665F6B3EA3B1210A39E /* GameFPSReader.swift */,
+				F63E68B2FED38B4884161E5D /* MenuBarReadoutView.swift */,
+				5764A47B25812BCB9C88BA5D /* Metrics.swift */,
+				35B75F75A170C2637A621F9E /* MonitorStore.swift */,
+				47BA21C8C942C55ED07D8B6E /* MonitorViews.swift */,
+				6BFA32FCCEFBEE63BA0034C8 /* OverlayController.swift */,
+				95871F72AF357BBE228F80CB /* OverlayShortcut.swift */,
+				C989080960D759B9E83607B7 /* PerformanceDetailsView.swift */,
+				3ECA66ED6426C682ED9D1316 /* PerformanceStats.swift */,
+				FCF86B80E42A942A4F54C49B /* ScreenUpdateSampler.swift */,
+				6D5BDEF338D2AFED09456DE0 /* SystemSampler.swift */,
+			);
+			path = FrameBar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AC4CC2FA01238885353C95B /* FrameBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 254D899A3389B3E8FD2DC9C0 /* Build configuration list for PBXNativeTarget "FrameBar" */;
+			buildPhases = (
+				708A37A3775579905AD672CD /* Sources */,
+				1432C4FBD1C2C9CED1D1E140 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FrameBar;
+			packageProductDependencies = (
+			);
+			productName = FrameBar;
+			productReference = BD391AE6AA3C79B2370CC6FE /* FrameBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DAFB54AD6DBBB1006BA8AED /* FrameBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC8D53668804ABFBCC2DBF0B /* Build configuration list for PBXNativeTarget "FrameBarTests" */;
+			buildPhases = (
+				18C853D8601CFA0986EA9AA1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				35FD2D11B1A5A0A333782D4D /* PBXTargetDependency */,
+			);
+			name = FrameBarTests;
+			packageProductDependencies = (
+			);
+			productName = FrameBarTests;
+			productReference = 2893B8E2D072A4360A332545 /* FrameBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52D9385323FECAA33CFE9607 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = D397FCC6572E88832197D16E /* Build configuration list for PBXProject "FrameBar" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 93AA4BDFFE2EB4A2D0FB9C96;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7CEF4859C6A69CE43576647D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AC4CC2FA01238885353C95B /* FrameBar */,
+				9DAFB54AD6DBBB1006BA8AED /* FrameBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1432C4FBD1C2C9CED1D1E140 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF3530CD16E31AEEF043D091 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18C853D8601CFA0986EA9AA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5663E5ED1DCAF4FEB46ED0CB /* FPSSetupTests.swift in Sources */,
+				3102A7C98B2DEA93ED5FA4AA /* FrameBarTests.swift in Sources */,
+				4E3AFAC4F43C4244C7E82C07 /* MenuBarTests.swift in Sources */,
+				0615D21EE544304FD0A26F64 /* OverlayPlacementTests.swift in Sources */,
+				08CCC936D3F6B4C15C610530 /* PerformanceStatsTests.swift in Sources */,
+				1CC3EB8A0E2684276E1414DA /* ProfileTests.swift in Sources */,
+				BD25E369760C3406A41806B4 /* StatsLifecycleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		708A37A3775579905AD672CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D475D92B4340D7DF73A1570 /* CapturelyTelemetry.swift in Sources */,
+				9EBAB7ED2CE88D262CEC9067 /* DisplaySampler.swift in Sources */,
+				DAAB3348266C5D877970DE39 /* FPSParser.swift in Sources */,
+				1731B386A0A3C8223FCEACBD /* FPSSetup.swift in Sources */,
+				8E8BE5B59613B8063C4C61A2 /* FrameBarApp.swift in Sources */,
+				4708EA550CEF57CE2A8EC110 /* GameFPSReader.swift in Sources */,
+				E3E6B1D1A3A3361B07AD0143 /* MenuBarReadoutView.swift in Sources */,
+				0A486909C0687B77861A3D56 /* Metrics.swift in Sources */,
+				BD044ABEA13B2EA47B0B316B /* MonitorStore.swift in Sources */,
+				C4DFEC3658D7E2EB5E0B84F1 /* MonitorViews.swift in Sources */,
+				DD57E1F3A5D097BC81063EC2 /* OverlayController.swift in Sources */,
+				4A654C094ED70EC2C5AEA1FF /* OverlayShortcut.swift in Sources */,
+				F2EE41BBDC89C50F9C1DFEA0 /* PerformanceDetailsView.swift in Sources */,
+				901037EAFC260E51A7C3537A /* PerformanceStats.swift in Sources */,
+				3D597DA82B79C0F3D7EFC251 /* ScreenUpdateSampler.swift in Sources */,
+				4F617150A6283AC7920679A2 /* SystemSampler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		35FD2D11B1A5A0A333782D4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AC4CC2FA01238885353C95B /* FrameBar */;
+			targetProxy = 0F4093799B25D29F2509861A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		21289B2C95DCD66C6D5FE953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		29BAB1996E8CEEB59C3747A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrameBar.app/Contents/MacOS/FrameBar";
+			};
+			name = Release;
+		};
+		6D348D856FFDCDCF7B113BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBarTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FrameBar.app/Contents/MacOS/FrameBar";
+			};
+			name = Debug;
+		};
+		A6877647DCB257CB5B42F949 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSScreenCaptureUsageDescription = "FrameBar reads Roblox's visible FPS stats locally. Images are never saved or uploaded.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBar;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AC9A6655827C465E44F12F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSScreenCaptureUsageDescription = "FrameBar reads Roblox's visible FPS stats locally. Images are never saved or uploaded.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBar;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EF515C2E1A8ADC8487F8724D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		254D899A3389B3E8FD2DC9C0 /* Build configuration list for PBXNativeTarget "FrameBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6877647DCB257CB5B42F949 /* Debug */,
+				AC9A6655827C465E44F12F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D397FCC6572E88832197D16E /* Build configuration list for PBXProject "FrameBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21289B2C95DCD66C6D5FE953 /* Debug */,
+				EF515C2E1A8ADC8487F8724D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DC8D53668804ABFBCC2DBF0B /* Build configuration list for PBXNativeTarget "FrameBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D348D856FFDCDCF7B113BC4 /* Debug */,
+				29BAB1996E8CEEB59C3747A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52D9385323FECAA33CFE9607 /* Project object */;
+}

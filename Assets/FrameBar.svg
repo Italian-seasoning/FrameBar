@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">FrameBar</title>
+  <desc id="desc">A mint performance waveform on a graphite glass tile.</desc>
+  <defs>
+    <linearGradient id="tile" x1="208" y1="64" x2="768" y2="960" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#36454b"/>
+      <stop offset=".45" stop-color="#17242b"/>
+      <stop offset="1" stop-color="#0b141a"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="512" y1="64" x2="512" y2="960" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#bdd6d8" stop-opacity=".55"/>
+      <stop offset=".45" stop-color="#8cafb7" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#58828e" stop-opacity=".22"/>
+    </linearGradient>
+    <radialGradient id="light" cx=".25" cy="0" r="1">
+      <stop stop-color="#d3ecee" stop-opacity=".13"/>
+      <stop offset=".65" stop-color="#d3ecee" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mint" x1="512" y1="340" x2="512" y2="688" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b7fff0"/>
+      <stop offset=".48" stop-color="#5df6d6"/>
+      <stop offset="1" stop-color="#24c6b2"/>
+    </linearGradient>
+    <linearGradient id="facet" x1="512" y1="340" x2="512" y2="688" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f2fff9" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#a1ffe9" stop-opacity=".12"/>
+    </linearGradient>
+    <path id="wave" d="M248 542H369L424 606L502 340L594 684L655 542H776"/>
+  </defs>
+  <rect x="64" y="64" width="896" height="896" rx="210" fill="url(#tile)"/>
+  <rect x="66" y="66" width="892" height="892" rx="208" fill="url(#light)" stroke="url(#rim)" stroke-width="4"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <use href="#wave" transform="translate(0 8)" stroke="#06161c" stroke-width="66"/>
+    <use href="#wave" stroke="#126f72" stroke-width="64"/>
+    <use href="#wave" stroke="url(#mint)" stroke-width="48"/>
+    <use href="#wave" transform="translate(0 -8)" stroke="url(#facet)" stroke-width="6"/>
+  </g>
+</svg>
