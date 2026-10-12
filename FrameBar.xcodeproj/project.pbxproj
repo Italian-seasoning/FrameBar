@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        AAAAAAAA0000000000000001 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = AAAAAAAA0000000000000002 /* Sparkle */; };
 		0615D21EE544304FD0A26F64 /* OverlayPlacementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F56D6394729771A0CFA94C /* OverlayPlacementTests.swift */; };
 		08CCC936D3F6B4C15C610530 /* PerformanceStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC669B9F8B2D1595C0C21C9 /* PerformanceStatsTests.swift */; };
 		0A486909C0687B77861A3D56 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764A47B25812BCB9C88BA5D /* Metrics.swift */; };
@@ -72,6 +73,14 @@
 		FCF86B80E42A942A4F54C49B /* ScreenUpdateSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUpdateSampler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+        AAAAAAAA0000000000000003 /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (AAAAAAAA0000000000000001 /* Sparkle in Frameworks */,);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
+/* End PBXFrameworksBuildPhase section */
 /* Begin PBXGroup section */
 		7CEF4859C6A69CE43576647D /* Products */ = {
 			isa = PBXGroup;
@@ -138,6 +147,7 @@
 			buildPhases = (
 				708A37A3775579905AD672CD /* Sources */,
 				1432C4FBD1C2C9CED1D1E140 /* Resources */,
+				AAAAAAAA0000000000000003 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -145,6 +155,7 @@
 			);
 			name = FrameBar;
 			packageProductDependencies = (
+				AAAAAAAA0000000000000002 /* Sparkle */,
 			);
 			productName = FrameBar;
 			productReference = BD391AE6AA3C79B2370CC6FE /* FrameBar.app */;
@@ -189,6 +200,7 @@
 			mainGroup = 93AA4BDFFE2EB4A2D0FB9C96;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			packageReferences = (AAAAAAAA0000000000000004 /* Sparkle */,);
 			productRefGroup = 7CEF4859C6A69CE43576647D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -362,16 +374,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
+				INFOPLIST_FILE = FrameBar/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSScreenCaptureUsageDescription = "FrameBar reads Roblox's visible FPS stats locally. Images are never saved or uploaded.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBar;
 				SDKROOT = macosx;
 			};
@@ -382,16 +395,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
+				INFOPLIST_FILE = FrameBar/Info.plist;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSScreenCaptureUsageDescription = "FrameBar reads Roblox's visible FPS stats locally. Images are never saved or uploaded.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBar;
 				SDKROOT = macosx;
 			};
@@ -458,6 +472,20 @@
 		};
 /* End XCBuildConfiguration section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+        AAAAAAAA0000000000000004 /* Sparkle */ = {
+            isa = XCRemoteSwiftPackageReference;
+            repositoryURL = "https://github.com/sparkle-project/Sparkle";
+            requirement = {kind = exactVersion; version = 2.9.6;};
+        };
+/* End XCRemoteSwiftPackageReference section */
+/* Begin XCSwiftPackageProductDependency section */
+        AAAAAAAA0000000000000002 /* Sparkle */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = AAAAAAAA0000000000000004 /* Sparkle */;
+            productName = Sparkle;
+        };
+/* End XCSwiftPackageProductDependency section */
 /* Begin XCConfigurationList section */
 		254D899A3389B3E8FD2DC9C0 /* Build configuration list for PBXNativeTarget "FrameBar" */ = {
 			isa = XCConfigurationList;

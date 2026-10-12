@@ -2,6 +2,7 @@ import AppKit
 import SwiftUI
 import Combine
 import os
+import Sparkle
 
 @main struct FrameBarApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
@@ -11,7 +12,27 @@ import os
                 CommandGroup(replacing: .appSettings) {
                     Button("Settings…") { delegate.showSettings() }.keyboardShortcut(",")
                 }
+                CommandGroup(after: .appInfo) { FrameBarUpdateButton() }
             }
+    }
+}
+
+@MainActor final class FrameBarUpdater: ObservableObject {
+    static let shared = FrameBarUpdater()
+    @Published private(set) var canCheckForUpdates = false
+    private let controller: SPUStandardUpdaterController
+
+    private init() {
+        controller = SPUStandardUpdaterController(startingUpdater: true, updaterDelegate: nil, userDriverDelegate: nil)
+        controller.updater.publisher(for: \.canCheckForUpdates).assign(to: &$canCheckForUpdates)
+    }
+    func checkForUpdates() { controller.checkForUpdates(nil) }
+}
+
+struct FrameBarUpdateButton: View {
+    @ObservedObject private var updater = FrameBarUpdater.shared
+    var body: some View {
+        Button("Check for Updates…") { updater.checkForUpdates() }.disabled(!updater.canCheckForUpdates)
     }
 }
 
@@ -48,6 +69,7 @@ final class MonitorPanel: NSPanel {
             }
             return
         }
+        _ = FrameBarUpdater.shared
         overlay = OverlayController(store: store)
         shortcut.action = { [weak self] in self?.store.overlayHidden.toggle() }
         store.preferences.$shortcutEnabled.sink { [weak self] enabled in

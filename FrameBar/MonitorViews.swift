@@ -189,6 +189,7 @@ struct SettingsView: View {
                 Text("Readings stay on this Mac. Nothing is uploaded.").font(.callout).foregroundStyle(.secondary)
             }
             Section {
+                FrameBarUpdateButton()
                 Button("Quit FrameBar") { NSApp.terminate(nil) }
             }
         }.formStyle(.grouped)
