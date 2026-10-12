@@ -1,6 +1,8 @@
 # FrameBar
 
-<img src="Assets/FrameBar.svg" width="128" alt="FrameBar app icon">
+<img src="FrameBar/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png" width="128" alt="FrameBar app icon">
+
+[View the software showcase](https://nolan-mac-apps.nolankrahn.chatgpt.site/apps/framebar)
 
 A small native macOS 14+ menu bar CPU, RAM, GPU and display monitor. The click-through Apple-style game overlay appears only when Roblox has a visible window and is the frontmost app. It hides on the desktop, when you switch apps, or when you turn the overlay off. No Quartz or desktop FPS appears in the game overlay.
 
