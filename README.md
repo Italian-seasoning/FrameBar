@@ -20,6 +20,31 @@ The project uses Xcode 26 or newer and XcodeGen. Open `FrameBar.xcodeproj` to ed
 
 The app icon's editable vector source is [Assets/FrameBar.svg](Assets/FrameBar.svg). Its checked-in PNG exports are required by the macOS asset catalog. To regenerate them after editing the SVG, install `librsvg` and run `bash script/export_app_icon.sh`. RTK is optional for building the public project.
 
+## Quick install
+
+```sh
+brew install --cask italian-seasoning/tap/framebar
+```
+
+Current preview: **1.0.1**. [Download the ZIP](https://github.com/Italian-seasoning/FrameBar/releases/download/v1.0.1/FrameBar-1.0.1-macOS.zip).
+
+Requires macOS 14 or newer on Apple silicon or Intel.
+
+These previews are not Apple-notarized. Homebrew verifies the archive checksum and leaves Gatekeeper enabled. If macOS blocks the first launch, review the app in **System Settings → Privacy & Security**. Sparkle verifies subsequent in-app updates with its signed feed.
+
+## See the app
+
+![FrameBar hardware panel with CPU, RAM, GPU and display refresh readings](docs/screenshots/framebar-panel.png)
+
+![FrameBar menu-bar layout and metric settings](docs/screenshots/framebar-settings.png)
+
+![FrameBar foreground-only Roblox overlay visibility and position settings](docs/screenshots/framebar-overlay.png)
+
+[Watch the interface walkthrough](docs/screenshots/framebar-walkthrough.mp4). This short sequence shows the captured interface views; it is not a gameplay or download benchmark.
+
+Screenshots show local preview builds. Empty queues and standby states are shown where applicable.
+
+
 ## Readings
 
 - CPU: system utilization, sampled from Mach CPU tick deltas. All cores together range from 0–100%.
@@ -64,3 +89,7 @@ rtk proxy xcodebuild -project FrameBar.xcodeproj -scheme FrameBar -derivedDataPa
 ```
 
 References: [Apple frame statuses](https://developer.apple.com/documentation/screencapturekit/scframestatus/idle), [Core Animation display link](https://developer.apple.com/documentation/quartzcore/cadisplaylink), [Roblox performance stats](https://create.roblox.com/docs/performance-optimization/identify).
+
+## License and attribution
+
+[MIT](LICENSE) — Copyright © 2026 [Italian-seasoning](https://github.com/Italian-seasoning). Forks and redistribution are allowed; retain the copyright and license notice. Please identify independently maintained forks and link back to this project. Third-party components retain their own licenses.
