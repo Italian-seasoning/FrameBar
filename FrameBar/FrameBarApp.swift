@@ -107,9 +107,6 @@ final class MonitorPanel: NSPanel {
                     self.positionPanel()
                 }
             }.store(in: &subscriptions)
-        outsideClick = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] _ in
-            self?.hidePanel()
-        }
         escapeKey = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [weak self] event in
             if self?.store.preferences.shortcutEnabled == true && OverlayShortcut.matches(event) {
                 self?.store.overlayHidden.toggle()
@@ -167,6 +164,12 @@ final class MonitorPanel: NSPanel {
     }
 
     private func hidePanel() {
+        if let outsideClick {
+            NSEvent.removeMonitor(outsideClick)
+            self.outsideClick = nil
+        }
+        // Do not issue window-ordering calls during gameplay for a closed panel.
+        guard menuPanel.isVisible else { return }
         menuPanel.orderOut(nil)
         menuPanel.contentView = nil
         store.setPanelVisible(false)
@@ -183,6 +186,9 @@ final class MonitorPanel: NSPanel {
             menuPanel.orderFrontRegardless()
             positionPanel()
             menuPanel.makeKey()
+            outsideClick = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] _ in
+                self?.hidePanel()
+            }
         }
     }
 

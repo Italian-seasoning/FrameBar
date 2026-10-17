@@ -108,7 +108,7 @@ final class SystemSampler: @unchecked Sendable {
     private func gpu() -> Double? {
         if accelerator == 0 { accelerator = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("IOAccelerator")) }
         guard accelerator != 0,
-              let properties = IORegistryEntryCreateCFProperty(accelerator, "PerformanceStatistics" as CFString, kCFAllocatorDefault, 0)?.takeRetainedValue() as? [String: Any]
+              let properties = IORegistryEntryCreateCFProperty(accelerator, "PerformanceStatistics" as CFString, kCFAllocatorDefault, 0)?.takeRetainedValue() as? NSDictionary
         else { return nil }
         for key in ["Device Utilization %", "GPU Activity(%)", "GPU Core Utilization", "Renderer Utilization %"] {
             if let number = properties[key] as? NSNumber { return min(100, max(0, number.doubleValue)) }

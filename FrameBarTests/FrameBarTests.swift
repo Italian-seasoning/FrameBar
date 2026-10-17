@@ -23,4 +23,15 @@ final class FrameBarTests: XCTestCase {
         XCTAssertFalse(OverlayPolicy.visible(enabled: false, running: true, active: true, hasWindow: true))
         XCTAssertFalse(OverlayPolicy.visible(enabled: true, running: true, active: true, hasWindow: false))
     }
+
+    @MainActor func testOverlayCannotTakeFocusOrHitTestMouseInput() {
+        let store = MonitorStore()
+        let overlay = OverlayController(store: store)
+        XCTAssertTrue(overlay.panel.ignoresMouseEvents)
+        XCTAssertFalse(overlay.panel.acceptsMouseMovedEvents)
+        XCTAssertFalse(overlay.panel.canBecomeKey)
+        XCTAssertFalse(overlay.panel.canBecomeMain)
+        let host = OverlayHostingView(rootView: GameOverlayView(store: store, preferences: store.preferences))
+        XCTAssertNil(host.hitTest(NSPoint(x: 10, y: 10)))
+    }
 }

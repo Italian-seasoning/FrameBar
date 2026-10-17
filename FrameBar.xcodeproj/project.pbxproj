@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-        AAAAAAAA0000000000000001 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = AAAAAAAA0000000000000002 /* Sparkle */; };
 		0615D21EE544304FD0A26F64 /* OverlayPlacementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F56D6394729771A0CFA94C /* OverlayPlacementTests.swift */; };
 		08CCC936D3F6B4C15C610530 /* PerformanceStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC669B9F8B2D1595C0C21C9 /* PerformanceStatsTests.swift */; };
 		0A486909C0687B77861A3D56 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764A47B25812BCB9C88BA5D /* Metrics.swift */; };
@@ -20,6 +19,7 @@
 		4E3AFAC4F43C4244C7E82C07 /* MenuBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432EA2E1AA94C95718968AA5 /* MenuBarTests.swift */; };
 		4F617150A6283AC7920679A2 /* SystemSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5BDEF338D2AFED09456DE0 /* SystemSampler.swift */; };
 		5663E5ED1DCAF4FEB46ED0CB /* FPSSetupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3758F3721B2564DCCAA61ED /* FPSSetupTests.swift */; };
+		70208121AFAE01A1698F60D8 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 87616CA327EB8906438AB905 /* Sparkle */; };
 		8D475D92B4340D7DF73A1570 /* CapturelyTelemetry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F04FCD187E7167CB10AE04 /* CapturelyTelemetry.swift */; };
 		8E8BE5B59613B8063C4C61A2 /* FrameBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7AD29169F88953197755E3 /* FrameBarApp.swift */; };
 		901037EAFC260E51A7C3537A /* PerformanceStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECA66ED6426C682ED9D1316 /* PerformanceStats.swift */; };
@@ -45,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0915E92B58BB34963096501F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		11C6856750C9CF9BADEBC505 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
 		2893B8E2D072A4360A332545 /* FrameBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrameBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B75F75A170C2637A621F9E /* MonitorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorStore.swift; sourceTree = "<group>"; };
@@ -74,13 +75,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-        AAAAAAAA0000000000000003 /* Frameworks */ = {
-            isa = PBXFrameworksBuildPhase;
-            buildActionMask = 2147483647;
-            files = (AAAAAAAA0000000000000001 /* Sparkle in Frameworks */,);
-            runOnlyForDeploymentPostprocessing = 0;
-        };
+		DA5A84CC51BCCF6C52834F93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70208121AFAE01A1698F60D8 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		7CEF4859C6A69CE43576647D /* Products */ = {
 			isa = PBXGroup;
@@ -124,6 +128,7 @@
 				5BE6FA3F300ABAA719EDD91F /* FPSSetup.swift */,
 				CC7AD29169F88953197755E3 /* FrameBarApp.swift */,
 				3CCBA665F6B3EA3B1210A39E /* GameFPSReader.swift */,
+				0915E92B58BB34963096501F /* Info.plist */,
 				F63E68B2FED38B4884161E5D /* MenuBarReadoutView.swift */,
 				5764A47B25812BCB9C88BA5D /* Metrics.swift */,
 				35B75F75A170C2637A621F9E /* MonitorStore.swift */,
@@ -147,7 +152,7 @@
 			buildPhases = (
 				708A37A3775579905AD672CD /* Sources */,
 				1432C4FBD1C2C9CED1D1E140 /* Resources */,
-				AAAAAAAA0000000000000003 /* Frameworks */,
+				DA5A84CC51BCCF6C52834F93 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,7 +160,7 @@
 			);
 			name = FrameBar;
 			packageProductDependencies = (
-				AAAAAAAA0000000000000002 /* Sparkle */,
+				87616CA327EB8906438AB905 /* Sparkle */,
 			);
 			productName = FrameBar;
 			productReference = BD391AE6AA3C79B2370CC6FE /* FrameBar.app */;
@@ -199,8 +204,10 @@
 			);
 			mainGroup = 93AA4BDFFE2EB4A2D0FB9C96;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1AC7BC74456B48009749853C /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
 			preferredProjectObjectVersion = 77;
-			packageReferences = (AAAAAAAA0000000000000004 /* Sparkle */,);
 			productRefGroup = 7CEF4859C6A69CE43576647D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -374,17 +381,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
 				INFOPLIST_FILE = FrameBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSScreenCaptureUsageDescription = "FrameBar reads Roblox's visible FPS stats locally. Images are never saved or uploaded.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBar;
 				SDKROOT = macosx;
 			};
@@ -395,17 +402,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
 				INFOPLIST_FILE = FrameBar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FrameBar;
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSScreenCaptureUsageDescription = "FrameBar reads Roblox's visible FPS stats locally. Images are never saved or uploaded.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = app.italianseasoning.FrameBar;
 				SDKROOT = macosx;
 			};
@@ -472,20 +479,6 @@
 		};
 /* End XCBuildConfiguration section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-        AAAAAAAA0000000000000004 /* Sparkle */ = {
-            isa = XCRemoteSwiftPackageReference;
-            repositoryURL = "https://github.com/sparkle-project/Sparkle";
-            requirement = {kind = exactVersion; version = 2.9.6;};
-        };
-/* End XCRemoteSwiftPackageReference section */
-/* Begin XCSwiftPackageProductDependency section */
-        AAAAAAAA0000000000000002 /* Sparkle */ = {
-            isa = XCSwiftPackageProductDependency;
-            package = AAAAAAAA0000000000000004 /* Sparkle */;
-            productName = Sparkle;
-        };
-/* End XCSwiftPackageProductDependency section */
 /* Begin XCConfigurationList section */
 		254D899A3389B3E8FD2DC9C0 /* Build configuration list for PBXNativeTarget "FrameBar" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +508,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1AC7BC74456B48009749853C /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = exactVersion;
+				version = 2.9.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		87616CA327EB8906438AB905 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AC7BC74456B48009749853C /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52D9385323FECAA33CFE9607 /* Project object */;
 }

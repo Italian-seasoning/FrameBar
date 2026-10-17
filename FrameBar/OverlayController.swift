@@ -42,6 +42,10 @@ final class OverlayPanel: NSPanel {
     override var canBecomeMain: Bool { false }
 }
 
+final class OverlayHostingView: NSHostingView<GameOverlayView> {
+    override func hitTest(_ point: NSPoint) -> NSView? { nil }
+}
+
 @MainActor final class OverlayController {
     let panel: OverlayPanel
     private let store: MonitorStore
@@ -59,6 +63,7 @@ final class OverlayPanel: NSPanel {
         panel.backgroundColor = .clear
         panel.hasShadow = false
         panel.ignoresMouseEvents = true
+        panel.acceptsMouseMovedEvents = false
         panel.hidesOnDeactivate = false
         panel.isReleasedWhenClosed = false
         panel.animationBehavior = .none
@@ -91,7 +96,7 @@ final class OverlayPanel: NSPanel {
             if intersection.width >= width && intersection.height >= height { bounds = intersection }
         }
         if panel.contentView == nil {
-            let host = NSHostingView(rootView: GameOverlayView(store: store, preferences: store.preferences))
+            let host = OverlayHostingView(rootView: GameOverlayView(store: store, preferences: store.preferences))
             host.focusRingType = .none
             panel.contentView = host
         }

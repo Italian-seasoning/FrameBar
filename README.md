@@ -26,7 +26,7 @@ The app icon's editable vector source is [Assets/FrameBar.svg](Assets/FrameBar.s
 brew install --cask italian-seasoning/tap/framebar
 ```
 
-Current preview: **1.0.1**. [Download the ZIP](https://github.com/Italian-seasoning/FrameBar/releases/download/v1.0.1/FrameBar-1.0.1-macOS.zip).
+Current preview: **1.0.2**. [Download the ZIP](https://github.com/Italian-seasoning/FrameBar/releases/download/v1.0.2/FrameBar-1.0.2-macOS.zip).
 
 Requires macOS 14 or newer on Apple silicon or Intel.
 
@@ -58,6 +58,10 @@ Screenshots show local preview builds. Empty queues and standby states are shown
 
 ## Screen access
 
+For everyday FPS without OCR, **FPS & Capture → Native Metal FPS HUD** enables Apple's app-scoped live rendering HUD for Roblox, including Froststrap's Roblox client. Restart Roblox through Froststrap after changing it. Enabling it turns FrameBar's OCR reader off. FPS appears in Apple's HUD; it is not fed into FrameBar's game FPS field. FrameBar's hardware readings remain available. MicroProfiler dumps remain optional debugging captures.
+
+The game overlay ignores mouse events and its hosting view never accepts hit tests. It cannot become a key or main window. The menu panel's outside-click observer exists only while that panel is open, so gameplay right-clicks do not trigger FrameBar window-ordering calls.
+
 CPU/RAM/GPU/display timing need no permission. Both FPS readers need macOS screen-recording permission. Click **Allow screen access for FPS** in FrameBar and enable it in System Settings → Privacy & Security → Screen & System Audio Recording. Relaunch FrameBar if macOS asks. Pixels are processed in memory and discarded, with no audio recording, screenshots saved, network traffic, or administrator helper.
 
 Overlay settings include four corners, two layouts, opacity, and 0.5/1/2-second metric updates. Under **Game Overlay → Position → Edit**, drag the mint preview or adjust the horizontal/vertical sliders, then choose **Lock**. Custom positions persist relative to the game window and stay within its edges as it resizes. Choosing a corner resets the custom position. The editor locks again when the panel is reopened; the actual game overlay always passes mouse clicks through, even while editing the preview. Top presets leave 64 points for game controls. **Overlay readings** selects FPS, CPU, RAM, GPU, derived frame period and visible ping; at least one remains selected. FPS-only has a smaller window. **⌃⌥⌘O** hides/shows the overlay using an OS hotkey, with no accessibility permission. The shortcut can be disabled; a conflict is reported in settings. Export CSV saves the latest five minutes only when you choose a location; unavailable readings are blank. Launch at login is optional and uses Apple's Service Management API.
@@ -70,7 +74,7 @@ Low overhead mode defaults on: OCR starts at 4-second intervals, adapts up to 30
 
 Session summaries count independent successful OCR reads, not repeated cached readings, and show sampled average/min/max FPS plus peak Roblox CPU/RAM and system GPU. The five latest completed summaries persist locally; reset starts a fresh current summary. These sampled values cannot measure stutters or 1% lows.
 
-**Diagnostics → Frame timings · 1% lows → Import frame capture** accepts a client MicroProfiler HTML dump with literal contiguous `Frames[i] = MakeFrame(...)` records, or per-frame CSV with a `frame_ms` column. HTML is parsed as text and never executed. Files are capped at 32 MB; malformed, discontinuous or unsupported formats are rejected. Capture results show average FPS, 1% and 0.1% lows, median/P95/P99 frame duration, worst duration and frames over 33.3ms. Lows are `1000 / mean duration of the slowest fraction of frames`, requiring at least 100 or 1000 frames respectively. They are historical capture results, not live readings. Short profiler dumps may be insufficient for lows, and GPU/CPU work duration is not automatically display presentation time. A real Roblox dump still needs user verification against the supported format.
+**Diagnostics → Debug capture · frame timings & lows → Import frame capture** accepts a client MicroProfiler HTML dump with literal contiguous `Frames[i] = MakeFrame(...)` records, or per-frame CSV with a `frame_ms` column. HTML is parsed as text and never executed. Files are capped at 32 MB; malformed, discontinuous or unsupported formats are rejected. Capture results show average FPS, 1% and 0.1% lows, median/P95/P99 frame duration, worst duration and frames over 33.3ms. Lows are `1000 / mean duration of the slowest fraction of frames`, requiring at least 100 or 1000 frames respectively. They are historical capture results, not live readings. Short profiler dumps may be insufficient for lows, and GPU/CPU work duration is not automatically display presentation time. A real Roblox dump still needs user verification against the supported format.
 
 Roblox saves client MicroProfiler dumps in `~/Library/Logs/Roblox`; see [MicroProfiler capture instructions](https://create.roblox.com/docs/performance-optimization/microprofiler). The current Roblox client does not provide FrameBar a documented live per-frame API. FrameBar does not substitute screen updates or sparse OCR samples for true game frame times.
 

@@ -228,7 +228,7 @@ struct SettingsView: View {
             SettingToggle(title: "Roblox overlay", isOn: $preferences.overlayEnabled)
             SettingToggle(title: "Slim layout", isOn: $preferences.compact)
             SettingToggle(title: "Hide overlay now", isOn: $store.overlayHidden)
-            Text("Only in foreground Roblox. Mouse clicks pass through to the game.")
+            Text("Only in foreground Roblox. All mouse input passes through to the game, including right-click camera movement.")
                 .font(.callout).foregroundStyle(.secondary)
             }
             Section("Position & appearance") {
@@ -266,13 +266,21 @@ struct SettingsView: View {
 
     private var capture: some View {
         Form {
+            Section("Everyday game FPS") {
+                SettingToggle(title: "Native Metal FPS HUD", isOn: Binding(get: { store.nativeFPSHUDEnabled }, set: store.setNativeFPSHUD))
+                Text("Apple's in-game HUD measures live FPS without OCR or profiler dumps. Restart Roblox through Froststrap to apply this setting. Its FPS appears in the Metal HUD; FrameBar's game FPS field still requires OCR.")
+                    .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                Text("Enabling the native HUD switches the OCR reader off. CPU, RAM and GPU monitoring still work.")
+                    .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+            }
             Section("FPS readers") {
             SettingToggle(title: "Desktop FPS estimate", isOn: $preferences.readDesktopFPS)
-            SettingToggle(title: "Roblox stats reader", isOn: $preferences.readGameFPS)
+            SettingToggle(title: "Read Roblox stats with OCR", isOn: $preferences.readGameFPS)
             SettingToggle(title: "Low overhead mode", isOn: $preferences.lowPower)
             Text("Low overhead: adaptive 4–30s stats reads. Standard: 2s when stats are readable. Missing stats back off automatically.")
                 .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
             }
+            if preferences.readGameFPS {
             Section("Screen access & game stats") {
             Button(store.fpsSetupPending ? "Waiting for foreground Roblox…" : "Check FPS setup") { store.checkFPSSetup() }
                 .disabled(store.fpsSetupPending)
@@ -308,6 +316,7 @@ struct SettingsView: View {
                 if store.permissionGranted { NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture")!) }
                 else { store.requestScreenAccess() }
             }.buttonStyle(.bordered)
+            }
             }
             Section("Performance") {
             Button(store.auditRunning ? "Measuring for 30 seconds…" : "Run 30-second CPU audit") { store.startCPUAudit() }

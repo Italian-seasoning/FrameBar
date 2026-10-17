@@ -7,7 +7,7 @@ struct PerformanceDetailsView: View {
             DataRow(label: "FrameBar CPU", value: store.metrics.monitorCPU.map { String(format: "%.2f%%", $0) } ?? "—")
             DataRow(label: "FrameBar RAM", value: Format.number(store.metrics.monitorMemory) + " MB")
             DataRow(label: "Thermal state", value: store.metrics.thermalState)
-            DataRow(label: "Stats read interval", value: "\(Int(store.fpsReadInterval))s")
+            DataRow(label: "OCR reader", value: store.preferences.readGameFPS ? "\(Int(store.fpsReadInterval))s" : "Off")
             DisclosureGroup("Game technical stats") {
                 VStack(spacing: 8) {
                     DataRow(label: "Roblox CPU · one core", value: Format.percent(store.metrics.robloxCPU))
@@ -32,11 +32,11 @@ struct PerformanceDetailsView: View {
                         .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                 }.padding(.top, 8)
             }
-            DisclosureGroup("Frame timings · 1% lows") {
+            DisclosureGroup("Debug capture · frame timings & lows") {
                 VStack(alignment: .leading, spacing: 8) {
                     Button(store.importingFrames ? "Importing…" : "Import frame capture…") { store.importFrameTimings() }
                         .buttonStyle(.bordered).disabled(store.importingFrames)
-                    Text("Import a client MicroProfiler HTML dump or per-frame CSV (frame_ms). These are capture results, not live overlay readings.")
+                    Text("Optional debugging only. In Roblox's MicroProfiler, choose Dump → a frame count with Legacy HTML selected, then import the saved file from ~/Library/Logs/Roblox. Turning the profiler on alone does not save a capture. This does not supply everyday live FPS.")
                         .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                     if let report = store.frameReport {
                         Text(report.name).font(.callout).lineLimit(2).foregroundStyle(.secondary)
