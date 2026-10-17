@@ -20,6 +20,7 @@ import ServiceManagement
     @Published var fpsSetupPending = false
     @Published var auditRunning = false
     @Published var auditResults: [CPUAuditResult] = []
+    @Published var nativeFPSHUDEnabled = UserDefaults(suiteName: "com.roblox.RobloxPlayer")?.bool(forKey: "MetalHUDForceEnabled") ?? false
     private var cpuAudit = CPUAudit()
     private(set) var panelVisible = false
     let preferences = Preferences()
@@ -307,6 +308,15 @@ import ServiceManagement
     }
 
     func resetSession() { currentSession = gamePID == nil ? nil : SessionSummary() }
+
+    func setNativeFPSHUD(_ enabled: Bool) {
+        guard let defaults = UserDefaults(suiteName: "com.roblox.RobloxPlayer") else { return }
+        // Apple's app-scoped HUD preference also applies to Froststrap's client,
+        // which uses the same bundle identifier. No game files are modified.
+        defaults.set(enabled, forKey: "MetalHUDForceEnabled")
+        nativeFPSHUDEnabled = enabled
+        if enabled { preferences.readGameFPS = false }
+    }
 
     func importFrameTimings() {
         guard !importingFrames else { return }

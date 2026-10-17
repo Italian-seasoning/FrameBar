@@ -4,8 +4,9 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DERIVED="$ROOT/build/Distribution"
 APP="$DERIVED/Build/Products/Release/FrameBar.app"
 SPARKLE_BIN="${SPARKLE_BIN_OVERRIDE:-$DERIVED/SourcePackages/artifacts/sparkle/Sparkle/bin}"
-xcodebuild -quiet -project "$ROOT/FrameBar.xcodeproj" -scheme FrameBar -configuration Release -destination 'platform=macOS,arch=arm64' -derivedDataPath "$DERIVED" build CODE_SIGNING_ALLOWED=NO
+xcodebuild -quiet -project "$ROOT/FrameBar.xcodeproj" -scheme FrameBar -configuration Release -destination 'generic/platform=macOS' -derivedDataPath "$DERIVED" build CODE_SIGNING_ALLOWED=NO ONLY_ACTIVE_ARCH=NO
 strip -S "$APP/Contents/MacOS/FrameBar"
+xattr -cr "$APP"
 codesign --force --deep --sign - "$APP"
 VERSION="$(plutil -extract CFBundleShortVersionString raw "$APP/Contents/Info.plist")"
 DIST="$ROOT/dist/releases/$VERSION"
