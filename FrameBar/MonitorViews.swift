@@ -52,7 +52,7 @@ struct MonitorView: View {
                                   permission: store.permissionGranted)
     }
     static func panelHeight(metrics: Metrics, readerEnabled: Bool, permission: Bool) -> CGFloat {
-        184 + (metrics.robloxRunning ? 20 : 0)
+        198 + (metrics.robloxRunning ? 20 : 0)
             + (RecordingReadiness.status(metrics: metrics, readerEnabled: readerEnabled, permission: permission) == nil ? 0 : 20)
     }
     private var live: some View {
@@ -60,8 +60,13 @@ struct MonitorView: View {
             HStack(spacing: 0) {
                 hardware("CPU", Format.number(store.metrics.cpu), "%")
                 Rectangle().fill(.primary.opacity(0.08)).frame(width: 0.5, height: 28)
-                hardware("RAM", Format.memory(store.metrics.memoryUsed), "G")
-                    .help("\(Format.memory(store.metrics.memoryUsed)) of \(Format.memory(store.metrics.memoryTotal)) GiB")
+                VStack(spacing: 3) {
+                    hardware("RAM", Format.memory(store.metrics.memoryUsed), "G")
+                        .help("\(Format.memory(store.metrics.memoryUsed)) of \(Format.memory(store.metrics.memoryTotal)) GiB")
+                    Text("Swap \(Format.memory(store.metrics.swapUsed))G")
+                        .font(.system(size: 9)).monospacedDigit().foregroundStyle(.secondary)
+                        .help("Swap used in GiB")
+                }
                 Rectangle().fill(.primary.opacity(0.08)).frame(width: 0.5, height: 28)
                 hardware("GPU", Format.number(store.metrics.gpu), "%")
             }

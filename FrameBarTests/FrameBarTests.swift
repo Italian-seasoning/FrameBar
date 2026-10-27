@@ -2,6 +2,19 @@ import XCTest
 @testable import FrameBar
 
 final class FrameBarTests: XCTestCase {
+    func testRAMAndSwapStack() {
+        var metrics = Metrics()
+        metrics.memoryUsed = 8
+        metrics.swapUsed = 1.5
+        XCTAssertEqual(MenuBarText.rows(metrics: metrics, selected: [.ram, .swap], layout: .stacked, labels: true),
+                       ["RAM 8.0G", "Swap 1.5G"])
+        metrics.swapUsed = nil
+        XCTAssertEqual(MenuBarMetric.swap.reading(metrics, labels: false), "—G")
+        let swap = SystemSampler().sample(pid: nil).swapUsed
+        XCTAssertNotNil(swap)
+        XCTAssertGreaterThanOrEqual(swap ?? -1, 0)
+    }
+
     func testFPSFormatsAndDecimals() {
         XCTAssertEqual(FPSParser.parse(["Render: 144.8 FPS"]), 144.8)
         XCTAssertEqual(FPSParser.parse(["FPS: 60"]), 60)

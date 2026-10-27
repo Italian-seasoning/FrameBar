@@ -2,13 +2,11 @@
 
 <img src="FrameBar/Assets.xcassets/AppIcon.appiconset/icon_512x512@2x.png" width="128" alt="FrameBar app icon">
 
-[View the software showcase](https://nolan-mac-apps.nolankrahn.chatgpt.site/apps/framebar)
-
 A small native macOS 14+ menu bar CPU, RAM, GPU and display monitor. The click-through Apple-style game overlay appears only when Roblox has a visible window and is the frontmost app. It hides on the desktop, when you switch apps, or when you turn the overlay off. No Quartz or desktop FPS appears in the game overlay.
 
 The floating menu panel is 256 × 184 points, with three hardware readouts, one FPS/display row, and a gear button for settings. It uses one native Liquid Glass surface on macOS 26+ and ultra-thin material on older systems, without a second window shadow. The game overlay defaults to one slim row. Click outside the menu panel or press Escape to dismiss it.
 
-Gear → **Menu Bar** lets you choose single-row or two-line stacked readings, select CPU/RAM/GPU/refresh rate/game FPS independently, and toggle metric labels and the icon. Empty selections show an icon so the monitor stays accessible. These choices persist across launches. Compact memory labels use **G**; the underlying measurement remains GiB. Game FPS is blank outside active Roblox. Selecting game FPS can keep the two-second stats reader active during Roblox even if its overlay is disabled; desktop capture still runs only with the menu panel open.
+Gear → **Menu Bar** lets you choose single-row or two-line stacked readings, select CPU/RAM/Swap/GPU/refresh rate/game FPS independently, and toggle metric labels and the icon. Empty selections show an icon so the monitor stays accessible. These choices persist across launches. RAM and Swap are shown in GiB with compact **G** labels. Game FPS is blank outside active Roblox. Selecting game FPS can keep the two-second stats reader active during Roblox even if its overlay is disabled; desktop capture still runs only with the menu panel open.
 
 Build, install into `~/Applications`, and launch:
 
@@ -49,6 +47,7 @@ Screenshots show local preview builds. Empty queues and standby states are shown
 
 - CPU: system utilization, sampled from Mach CPU tick deltas. All cores together range from 0–100%.
 - RAM: an estimate in GiB of app, wired and compressed physical memory, excluding file-backed and purgeable pages. It can differ slightly from Activity Monitor. Memory pressure comes from the system kernel pressure level.
+- Swap: system swap space in use, reported in GiB.
 - GPU: global device utilization from the GPU driver's I/O Registry performance statistics. A dash means the driver does not expose it. This is not per-game GPU usage or VRAM.
 - Display refresh: Core Animation display-link timing, reprobed when Low Power Mode or the display changes. Shows unavailable while gathering fresh timing, rather than falling back to the configured 120 Hz mode. Low Power Mode on a variable-refresh panel shows **Adaptive** (**—Hz** in the menu bar): macOS can continue reporting 120 callbacks/s without establishing the panel's actual rate. The dash explicitly means that the current panel rate is unavailable; this remains an unresolved measurement limitation. Fixed-rate displays keep numeric timing. This is a scheduling estimate, not an independent panel measurement.
 - Display cadence: Core Animation callbacks per second while the panel is open. It does not count WindowServer renders or Roblox frames.
