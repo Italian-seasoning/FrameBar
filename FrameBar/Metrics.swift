@@ -5,6 +5,7 @@ struct Metrics: Codable {
     var timestamp = Date()
     var cpu: Double?
     var memoryUsed: Double?
+    var swapUsed: Double?
     var memoryTotal = Double(ProcessInfo.processInfo.physicalMemory) / 1_073_741_824
     var memoryPressure = "Unknown"
     var gpu: Double?
@@ -117,12 +118,13 @@ enum OverlayMetric: String, CaseIterable, Identifiable {
 }
 
 enum MenuBarMetric: String, CaseIterable, Identifiable {
-    case cpu = "CPU", ram = "RAM", gpu = "GPU", refresh = "Refresh rate", gameFPS = "Game FPS"
+    case cpu = "CPU", ram = "RAM", swap = "Swap", gpu = "GPU", refresh = "Refresh rate", gameFPS = "Game FPS"
     var id: String { rawValue }
     var reservedReading: String {
         switch self {
         case .cpu, .gpu: return "100%"
         case .ram: return Format.memory(ceil(Double(ProcessInfo.processInfo.physicalMemory) / 1_073_741_824)) + "G"
+        case .swap: return "999.9G"
         case .refresh: return "9999Hz"
         case .gameFPS: return "1000fps"
         }
@@ -131,6 +133,7 @@ enum MenuBarMetric: String, CaseIterable, Identifiable {
         switch self {
         case .cpu: return (labels ? "CPU " : "") + Format.percent(metrics.cpu)
         case .ram: return (labels ? "RAM " : "") + Format.memory(metrics.memoryUsed) + "G"
+        case .swap: return (labels ? "Swap " : "") + Format.memory(metrics.swapUsed) + "G"
         case .gpu: return (labels ? "GPU " : "") + Format.percent(metrics.gpu)
         case .refresh: return metrics.refreshAdaptive ? (labels ? "Hz —" : "—Hz") : (labels ? "Hz " : "") + Format.number(metrics.refreshHz) + (labels ? "" : "Hz")
         case .gameFPS: return Format.number(metrics.robloxActive ? metrics.gameFPS : nil) + "fps"

@@ -19,6 +19,7 @@ final class SystemSampler: @unchecked Sendable {
         var metrics = Metrics()
         metrics.cpu = cpu()
         metrics.memoryUsed = memory()
+        metrics.swapUsed = swap()
         metrics.memoryPressure = pressure()
         metrics.gpu = gpu()
         var own = rusage_info_v2()
@@ -96,6 +97,13 @@ final class SystemSampler: @unchecked Sendable {
         let reclaimable = UInt64(info.purgeable_count) + UInt64(info.external_page_count)
         let used = pages > reclaimable ? pages - reclaimable : 0
         return min(Double(ProcessInfo.processInfo.physicalMemory), Double(used) * Double(vm_kernel_page_size)) / 1_073_741_824
+    }
+
+    private func swap() -> Double? {
+        var usage = xsw_usage()
+        var size = MemoryLayout<xsw_usage>.size
+        guard sysctlbyname("vm.swapusage", &usage, &size, nil, 0) == 0 else { return nil }
+        return Double(usage.xsu_used) / 1_073_741_824
     }
 
     private func pressure() -> String {

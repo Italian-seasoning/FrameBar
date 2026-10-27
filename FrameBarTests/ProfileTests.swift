@@ -56,11 +56,11 @@ final class ProfileTests: XCTestCase {
 
     @MainActor func testPanelReservesSpaceForReadiness() {
         var metrics = Metrics()
-        XCTAssertEqual(MonitorView.panelHeight(metrics: metrics, readerEnabled: true, permission: false), 184)
+        XCTAssertEqual(MonitorView.panelHeight(metrics: metrics, readerEnabled: true, permission: false), 198)
         metrics.robloxRunning = true
         metrics.robloxActive = true
-        XCTAssertEqual(MonitorView.panelHeight(metrics: metrics, readerEnabled: true, permission: false), 224)
+        XCTAssertEqual(MonitorView.panelHeight(metrics: metrics, readerEnabled: true, permission: false), 238)
         metrics.gameFPS = 120
-        XCTAssertEqual(MonitorView.panelHeight(metrics: metrics, readerEnabled: true, permission: true), 204)
+        XCTAssertEqual(MonitorView.panelHeight(metrics: metrics, readerEnabled: true, permission: true), 218)
     }
 }
